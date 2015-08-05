@@ -3,8 +3,8 @@
 
 define(function () {
     var config = {
-        "appName": "Awesome app",
-        "appHeader": "All awesome stuff"
+        "appName": "爱上阅读",
+        "appHeader": "所有"
     };
     return config;
 });

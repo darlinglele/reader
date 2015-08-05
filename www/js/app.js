@@ -29,14 +29,16 @@ require(['jquery', 'angular', 'framework7', 'mobile'], function ($, angular, fra
         angular.bootstrap(this, [mobile['name']]);
 
         //Create framework app ;
-        var framework = new framework7();
+        var framework = new framework7({material:true});
         framework.addView('.view-main', {});
 
         //Load and compile report angular template before animation dynamically
         framework.onPageBeforeAnimation('report', function (page) {
             angular.module('mobile.controllers').controller('ReportDetailController', ['$scope', 'reports', function ($scope, reports) {
                 $scope.report = reports.get({id: page.query.id % 2});
+                $scope.title =page.query.name;
             }]);
+
             var reportPage = $('[data-page=report].page');
             var injector = angular.injector(['mobile']);
             var $compile = injector.get('$compile');
@@ -51,11 +53,7 @@ require(['jquery', 'angular', 'framework7', 'mobile'], function ($, angular, fra
 
         //Slide the report content
         framework.onPageAfterAnimation('report', function (page) {
-            framework.slider('.slider-container', {
-                pagination: '.slider-pagination',
-                direction: 'vertical',
-                paginationHide: false
-            });
+            
         });
     });
 });

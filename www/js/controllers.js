@@ -6,7 +6,7 @@ define(['app.config', 'angular', 'services'], function (config, angular, service
     var mobileAppControllers = angular.module('mobile.controllers', ['mobile.services']);
 
     mobileAppControllers.controller('InitializationController', ['$scope', function ($scope) {
-        $scope.appName =config.appName;
+        $scope.app ={name:config.appName};
     }]);
 
     mobileAppControllers.controller('ReportListController', ['$scope', 'reports', 'categories', function ($scope, reports, categories) {

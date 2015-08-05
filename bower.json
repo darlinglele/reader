@@ -11,6 +11,6 @@
     "angular-route": "~1.3.x",
     "angular-resource": "~1.3.x",
     "requirejs": "~2.1.x",
-    "framework7": "^0.10.x"
+    "framework7": "^1.x.x"
   }
 }

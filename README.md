@@ -1,6 +1,7 @@
 darlinglele/reader
 ===============
 基于darlinglele/mobile-app-seed, 个人手机端阅读器
+
 安装:
 
 1. git clone https://github.com/darlinglele/reader.git

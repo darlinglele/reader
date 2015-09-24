@@ -7,8 +7,8 @@ define(['angular', 'angularResource'], function (angular) {
     var mobileServices = angular.module('mobile.services', ['ngResource']);
 
     mobileServices.factory('reports', ['$resource', function ($resource) {
-        return $resource('reports/:id.json', {}, {
-                query: {method: 'GET', params: {id: 'reports'}, isArray: true}
+        return $resource('http://linzhixiong.com:8089/document?site=:id', {}, {
+                query: {method: 'GET', params: {}, isArray: true}
             }
         );
     }]);
@@ -16,6 +16,11 @@ define(['angular', 'angularResource'], function (angular) {
     mobileServices.factory('categories', ['$resource', function ($resource) {
         return $resource('reports/categories.json', {}, {
                 query: {method: 'GET', params: {id: 'categories'}, isArray: true}
+            }
+        );
+    }]).factory('sites', ['$resource', function ($resource) {
+        return $resource('http://linzhixiong.com:8089/site', {}, {
+                query: {method: 'GET', params: {}, isArray: true}
             }
         );
     }]);

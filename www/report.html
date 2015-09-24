@@ -18,23 +18,10 @@
         <div class="page-content">
            <div class="list-block">
 <ul>
-<li><a href="article.html?id=9888" class="item-link item-content">
+<li ng-repeat="document in documents"><a href="article.html?id=9888" class="item-link item-content">
 <div class="item-inner">
-<div class="item-title">你不知道的HTTP</div>
-</div></a></li>
-<li><a href="#" class="item-link item-content">
-<div class="item-inner">
-<div class="item-title">John Doe</div>
-</div></a></li>
-
-<li><a href="#" class="item-link item-content">
-<div class="item-inner">
-<div class="item-title">Ivan Petrov</div>
-</div></a></li>
-<li><a href="#" class="item-link item-content">
-<div class="item-inner">
-<div class="item-title">Jenna Smith</div>
-</div></a></li>
+<div class="item-title">{{document.title}}</div>
+</div></a></li> 
 </ul>
 </div>
         </div>

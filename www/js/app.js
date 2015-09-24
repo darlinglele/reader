@@ -35,7 +35,7 @@ require(['jquery', 'angular', 'framework7', 'mobile'], function ($, angular, fra
         //Load and compile report angular template before animation dynamically
         framework.onPageBeforeAnimation('report', function (page) {
             angular.module('mobile.controllers').controller('ReportDetailController', ['$scope', 'reports', function ($scope, reports) {
-                $scope.report = reports.get({id: page.query.id % 2});
+                $scope.documents = reports.get({id: page.query.name});                
                 $scope.title =page.query.name;
             }]);
 

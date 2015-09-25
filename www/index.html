@@ -1,54 +1,57 @@
 <!DOCTYPE html>
 <html ng-app="mobile" ng-controller="InitializationController">
-    <head>
-        <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-                <meta name="apple-mobile-web-app-capable" content="yes">
-                    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-                        <title>{{app.name}}</title>
-                        <link rel="stylesheet" href="bower_components/framework7/dist/css/framework7.material.min.css">
-                            <script src="bower_components/requirejs/require.js" data-main="js/app.js"></script>
-                        </head>
-                        <body>
-                            <!-- Views-->
-                            <div class="views">
-                                <div class="view view-main" data-page="index">
-                                    <div class="pages" >
-                                        <div data-page="index" class="page navbar-fixed" ng-controller="ReportListController">
-                                            <div class="navbar">
-                                                <div class="navbar-inner">
-                                                    <div class="center sliding">{{app.name}}</div>
-                                                    <div class="right">
-                                                        <a href="#"
+<head>
+    <link type="image/x-icon" href="/img/f7.icon" rel="shortcut icon">
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>{{app.name}}</title>
+    <link rel="stylesheet" href="bower_components/framework7/dist/css/framework7.material.min.css">
+    <script src="bower_components/requirejs/require.js" data-main="js/app.js"></script>
+</head>
+<body>
+<!-- Views-->
+<div class="views">
+    <div class="view view-main" data-page="index">
+        <div class="pages">
+            <div data-page="index" class="page navbar-fixed" ng-controller="InitializationController">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <div class="center sliding">{{app.name}}</div>
+                        <div class="right">
+                            <a href="#"
                                class="link icon-only open-panel">
-                                                            <i class="icon icon-bars"></i>
-                                                        </a>
-                                                    </div>
+                                <i class="icon icon-bars"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-content">
+                    <div class="content-block-title">{{appHeader}}</div>
+                    <div class="list-block accordion-list" ng-controller="SiteListController">
+                        <div class="list-block media-list">
+                            <ul>
+                                <li class="swipeout" ng-repeat="site in sites">
+                                    <div class="swipeout-content">
+                                        <a href="report.html?name={{site.title}}" class="item-link item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title-row">
+                                                    <div class="item-title">{{site.title}}</div>
                                                 </div>
                                             </div>
-                                            <div class="page-content">
-                                                <div class="content-block-title">{{appHeader}}</div>
-                                                <div class="list-block accordion-list" ng-controller="ReportListController">
-                                                    <div class="list-block media-list">
-                                                        <ul>
-                                                            <li class="swipeout" ng-repeat="site in sites">
-                                                                <div class="swipeout-content">
-                                                                    <a href="report.html?name={{site.title}}" class="item-link item-content">
-                                                                        <div class="item-inner">
-                                                                            <div class="item-title-row">
-                                                                                <div class="item-title">{{site.title}}</div></div>
-                                                                            </div>
-                                                                    </a>
-                                                                </div>
-                                                            </li>
-                                                      
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </a>
                                     </div>
-                                </div>
-                            </div>
-                        </body>
-                    </html>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -7,7 +7,7 @@ define(['angular', 'angularResource'], function (angular) {
     var mobileServices = angular.module('mobile.services', ['ngResource']);
 
     mobileServices.factory('reports', ['$resource', function ($resource) {
-        return $resource('http://linzhixiong.com:8089/document?site=:id', {}, {
+        return $resource('http://linzhixiong.com:8089/document/:id', {}, {
                 query: {method: 'GET', params: {}, isArray: true}
             }
         );

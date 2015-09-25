@@ -9,9 +9,8 @@ define(['app.config', 'angular', 'services'], function (config, angular, service
         $scope.app ={name:config.appName};
     }]);
 
-    mobileAppControllers.controller('ReportListController', ['$scope','sites', 'categories', function ($scope, sites, categories) {
+    mobileAppControllers.controller('SiteListController', ['$scope','sites', 'categories', function ($scope, sites, categories) {
         $scope.appHeader = config.appHeader;
-        // $scope.categories = categories.query();
         $scope.sites = sites.query();
     }]);
 

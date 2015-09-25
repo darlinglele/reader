@@ -1,8 +1,7 @@
-
 <!--Report template, dynamic loaded and compiled-->
 
 <div data-page="report" class="page navbar-fixed">
-    <div ng-controller="ReportDetailController" style="height: 100%;">
+    <div ng-controller="ReportListController" style="height: 100%;">
         <div class="navbar">
             <div class="navbar-inner">
                 <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i></a>
@@ -16,14 +15,16 @@
             </div>
         </div>
         <div class="page-content">
-           <div class="list-block">
-<ul>
-<li ng-repeat="document in documents"><a href="article.html?id=9888" class="item-link item-content">
-<div class="item-inner">
-<div class="item-title">{{document.title}}</div>
-</div></a></li> 
-</ul>
-</div>
+            <div class="list-block">
+                <ul>
+                    <li ng-repeat="document in documents"><a href="article.html?id={{document.id}}"
+                                                             class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">{{document.title}}</div>
+                        </div>
+                    </a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
